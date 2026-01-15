@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Hosting Plans</title>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; }
+        .pricing-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        
+        .card { background: #1e293b; padding: 20px; border-radius: 15px; width: 250px; border: 1px solid #334155; transition: 0.3s; position: relative; }
+        .card:hover { transform: translateY(-10px); border-color: #6366f1; }
+        
+        .plan-name { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+        .price { font-size: 2rem; font-weight: bold; color: #a5b4fc; }
+        .price span { font-size: 1rem; color: #94a3b8; }
+        
+        .features { list-style: none; padding: 0; text-align: left; margin: 20px 0; color: #cbd5e1; }
+        .features li { padding: 8px 0; border-bottom: 1px solid #334155; }
+        .features li::before { content: "✔"; color: #4ade80; margin-right: 10px; }
+        
+        .btn { display: block; width: 90%; margin: 15px auto; padding: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center;}
+        
+        .basic .btn { background: #475569; color: white; }
+        .pro { border: 2px solid #6366f1; box-shadow: 0 0 15px rgba(99, 102, 241, 0.3); }
+        .pro .btn { background: linear-gradient(90deg, #6366f1, #a855f7); color: white; }
+        .ultra .btn { background: linear-gradient(90deg, #ec4899, #f43f5e); color: white; }
+        
+        .badge { position: absolute; top: -10px; right: 20px; background: #22c55e; color: black; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select a Plan</h1>
+    
+    <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="card basic">
+            <div class="plan-name">Basic</div>
+            <div class="price">₹19 <span>/month</span></div>
+            <ul class="features">
+                <li>1 Bot Hosting</li>
+                <li>Limited Support</li>
+                <li>95% Uptime</li>
+            </ul>
+            <a href="/pay/19" class="btn">Select Basic</a>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="card pro">
+            <span class="badge">POPULAR</span>
+            <div class="plan-name">Pro</div>
+            <div class="price">₹49 <span>/month</span></div>
+            <ul class="features">
+                <li>3 Bots Hosting</li>
+                <li>Code Editor Access</li>
+                <li>Priority Support</li>
+            </ul>
+            <a href="/pay/49" class="btn">Choose Pro</a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="card ultra">
+            <div class="plan-name">Ultra</div>
+            <div class="price">₹79 <span>/month</span></div>
+            <ul class="features">
+                <li>10 Bots Hosting</li>
+                <li>24/7 VIP Support</li>
+                <li>Full File Access</li>
+            </ul>
+            <a href="/pay/79" class="btn">Go Ultra</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
