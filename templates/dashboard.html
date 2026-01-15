@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body { background-color: #111827; color: white; font-family: sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 40px auto; background: #1f2937; padding: 30px; border-radius: 10px; border: 1px solid #374151; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        
+        h2 { margin-top: 0; color: #60a5fa; }
+        
+        label { display: block; margin-top: 15px; margin-bottom: 5px; color: #9ca3af; }
+        input[type="text"], input[type="file"] { width: 95%; padding: 12px; background: #374151; border: 1px solid #4b5563; color: white; border-radius: 5px; }
+        
+        .btn-deploy { width: 100%; padding: 12px; margin-top: 20px; background: #2563eb; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        .btn-deploy:hover { background: #1d4ed8; }
+        
+        .alert { padding: 15px; margin-bottom: 20px; border-radius: 5px; text-align: center; }
+        .success { background: #065f46; color: #a7f3d0; border: 1px solid #059669; }
+        .error { background: #7f1d1d; color: #fecaca; border: 1px solid #dc2626; }
+        
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #374151; padding-bottom: 10px; }
+        .logout { color: #f87171; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Messages Display Area -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="header">
+        <div>
+            <h2>🚀 Deploy Bot</h2>
+            <small>Active Plan: <span style="color: #4ade80;">₹{{ plan }}/mo</span></small>
+        </div>
+        <a href="/logout" class="logout">Logout ➜</a>
+    </div>
+
+    <form action="/dashboard" method="POST" enctype="multipart/form-data">
+        <label>Telegram Bot Token:</label>
+        <input type="text" name="bot_token" placeholder="Enter token from @BotFather" required>
+
+        <label>Upload Python File (main.py):</label>
+        <input type="file" name="file" accept=".py" required>
+
+        <button type="submit" class="btn-deploy">⚡ Upload & Launch Bot</button>
+    </form>
+</div>
+
+</body>
+</html>
