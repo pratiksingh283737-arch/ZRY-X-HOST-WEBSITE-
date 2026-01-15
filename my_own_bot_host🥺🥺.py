@@ -10,15 +10,15 @@ app.secret_key = "bhohot_secret_key_hai_ye"  # Session key
 # ==========================================
 # ⚙️ ADMIN SETTINGS (Yahan Edit Karein)
 # ==========================================
-ADMIN_UPI_ID = "your_upi_id@okhdfcbank"  # <--- APNI UPI ID YAHAN DALEIN
-ADMIN_NAME = "Bot Hosting Admin"         # <--- APNA NAAM LIKHEIN
+ADMIN_UPI_ID = "pratiksingh4@fam"  # <--- APNI UPI ID YAHAN DALEIN
+ADMIN_NAME = "ZRY X HOST"         # <--- APNA NAAM LIKHEIN
 
 # ==========================================
 # 🔑 API KEYS (GitHub & Render)
 # ==========================================
-GITHUB_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" 
-RENDER_API_KEY = "rnd_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-GITHUB_USERNAME = "YourGitHubUsername"
+GITHUB_TOKEN = "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" 
+RENDER_API_KEY = "rnd_xp0mZrXgBhkzo2OVK5F7JkYEphR9"
+GITHUB_USERNAME = ""
 
 # --- Deployment Logic (Same as before) ---
 def deploy_bot(user_name, bot_token, file_code):
